@@ -1,0 +1,7 @@
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: calc(100vh - 60px);
+  background-color: #324f4d;
+}
