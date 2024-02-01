@@ -1,39 +1,61 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Header from "../../header/header";
+import ArticlesMap from "../../airticlesMap/articlesmap";
 import styles from "../../styles/top.module.css";
 import { createTheme, ThemeProvider } from "@mui/material";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#b9f6ca",
-    },
-    secondary: {
-      main: "#b9f6ca",
-    },
+type article = {
+  id: number;
+  title: string;
+  content: string;
+  date: string;
+};
+
+let articles: article[] = [
+  {
+    id: 1,
+    title: "記事1",
+    content: "これは記事1の内容です。",
+    date: "2024-02-01",
   },
-});
+  {
+    id: 2,
+    title: "記事2",
+    content: "これは記事2の内容です。",
+    date: "2024-02-02",
+  },
+  {
+    id: 3,
+    title: "記事3",
+    content: "これは記事3の内容です。",
+    date: "2024-02-03",
+  },
+];
 
 export const Top = () => {
+  const [followArticle, setFollowArticle] = useState<article[]>(articles);
+  const [followCommunity, setFollowCommunity] = useState<article[]>(articles);
+
   return (
     <div>
       <Header />
-      <ThemeProvider theme={theme}>
-        <div className={styles.buttons}>
-          <Link to="/read">
-            <Button variant="outlined" size="large">
-              記事を読む
-            </Button>
-          </Link>
-          <Link to="/write">
-            <Button variant="outlined" size="large">
-              記事を書く
-            </Button>
-          </Link>
+      <div className="whole_page">
+        <div className="followAirticle">
+          <ul>
+            <li>
+              <ArticlesMap articles={followArticle} />
+            </li>
+            <li>
+              <ArticlesMap articles={followCommunity} />
+            </li>
+          </ul>
         </div>
-      </ThemeProvider>
+        <div>あ</div>
+        <div>あ</div>
+      </div>
     </div>
   );
 };
