@@ -1,9 +1,46 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex;
   background-color: #dad7cd;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header_box {
+  height: 60px;
+}
+
+.header_modules {
+  display: flex;
+  align-items: center;
+}
+
+.search_module {
+  display: flex;
+  align-items: center;
+}
+
+.search_button {
+  position: absolute;
+  right: 10px;
+}
+
+.header_searchbar {
+  font-size: 18px;
+  height: 40px;
+  min-width: 100px;
+  /* max-width: 200px; */
+  border: solid;
+  border-radius: 40px;
+  padding-left: 20px;
+  padding-right: 50px;
 }
 
 .whole_page {

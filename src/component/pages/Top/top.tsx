@@ -36,24 +36,25 @@ let articles: article[] = [
 ];
 
 export const Top = () => {
-  const [followArticle, setFollowArticle] = useState<article[]>(articles);
+  const [followAuthor, setFollowAuthor] = useState<article[]>(articles);
   const [followCommunity, setFollowCommunity] = useState<article[]>(articles);
 
   return (
     <div>
       <Header />
-      <div className="whole_page">
-        <div className="followAirticle">
-          <ul>
-            <li>
-              <ArticlesMap articles={followArticle} />
-            </li>
-            <li>
+      <div className={styles.wholePage}>
+        <div className={styles.followArticles}>
+          <div>
+            <div className={styles.followAuthor}>
+              <div>フォローAuteor</div>
+              <ArticlesMap articles={followAuthor} />
+            </div>
+            <div className={styles.followCommunity}>
+              <div>フォローCommunity</div>
               <ArticlesMap articles={followCommunity} />
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-        <div>あ</div>
         <div>あ</div>
       </div>
     </div>
