@@ -28,8 +28,13 @@
 }
 
 .search_button {
-  position: absolute;
-  right: 10px;
+  position: relative;
+  right: 35px;
+}
+
+.search_button button {
+  border: none;
+  background-color: unset;
 }
 
 .header_searchbar {
@@ -43,8 +48,14 @@
   padding-right: 50px;
 }
 
-.whole_page {
+.post_module {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  height: 45px;
+  padding: 0 10px;
+  margin: 0 20px;
+  font-size: 18px;
+  min-width: 100px;
+  border: solid;
+  border-radius: 40px;
 }

@@ -1,11 +1,7 @@
-import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
 import Header from "../../header/header";
 import ArticlesMap from "../../airticlesMap/articlesmap";
 import styles from "../../styles/top.module.css";
-import { createTheme, ThemeProvider } from "@mui/material";
 
 type article = {
   id: number;
@@ -46,16 +42,28 @@ export const Top = () => {
         <div className={styles.followArticles}>
           <div>
             <div className={styles.followAuthor}>
-              <div>フォローAuteor</div>
+              <h2>フォローAuther</h2>
               <ArticlesMap articles={followAuthor} />
             </div>
             <div className={styles.followCommunity}>
-              <div>フォローCommunity</div>
+              <h2>フォローCommunity</h2>
               <ArticlesMap articles={followCommunity} />
             </div>
           </div>
         </div>
-        <div>あ</div>
+        <div className={styles.trend}>
+          <div className={styles.trendArticle}>
+            <div className={styles.monthlyTrend}>
+              <h2>月間トレンド記事</h2>
+            </div>
+            <div className={styles.weeklyTrend}>
+              <h2>週間トレンド記事</h2>
+            </div>
+            <div className={styles.dailyTrend}>
+              <h2>日間トレンド記事</h2>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
