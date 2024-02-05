@@ -1,4 +1,11 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex;
   background-color: #dad7cd;
   height: 60px;
   display: flex;
@@ -6,8 +13,49 @@
   align-items: center;
 }
 
-.whole_page {
+.header_box {
+  height: 60px;
+}
+
+.header_modules {
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.search_module {
+  display: flex;
+  align-items: center;
+}
+
+.search_button {
+  position: relative;
+  right: 35px;
+}
+
+.search_button button {
+  border: none;
+  background-color: unset;
+}
+
+.header_searchbar {
+  font-size: 18px;
+  height: 40px;
+  min-width: 100px;
+  /* max-width: 200px; */
+  border: solid;
+  border-radius: 40px;
+  padding-left: 20px;
+  padding-right: 50px;
+}
+
+.post_module {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding: 0 10px;
+  margin: 0 20px;
+  font-size: 18px;
+  min-width: 100px;
+  border: solid;
+  border-radius: 40px;
 }

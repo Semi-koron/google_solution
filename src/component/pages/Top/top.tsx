@@ -1,11 +1,7 @@
-import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
 import Header from "../../header/header";
 import ArticlesMap from "../../airticlesMap/articlesmap";
 import styles from "../../styles/top.module.css";
-import { createTheme, ThemeProvider } from "@mui/material";
 
 type article = {
   id: number;
@@ -36,25 +32,38 @@ let articles: article[] = [
 ];
 
 export const Top = () => {
-  const [followArticle, setFollowArticle] = useState<article[]>(articles);
+  const [followAuthor, setFollowAuthor] = useState<article[]>(articles);
   const [followCommunity, setFollowCommunity] = useState<article[]>(articles);
 
   return (
     <div>
       <Header />
-      <div className="whole_page">
-        <div className="followAirticle">
-          <ul>
-            <li>
-              <ArticlesMap articles={followArticle} />
-            </li>
-            <li>
+      <div className={styles.wholePage}>
+        <div className={styles.followArticles}>
+          <div>
+            <div className={styles.followAuthor}>
+              <h2>フォローAuther</h2>
+              <ArticlesMap articles={followAuthor} />
+            </div>
+            <div className={styles.followCommunity}>
+              <h2>フォローCommunity</h2>
               <ArticlesMap articles={followCommunity} />
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-        <div>あ</div>
-        <div>あ</div>
+        <div className={styles.trend}>
+          <div className={styles.trendArticle}>
+            <div className={styles.monthlyTrend}>
+              <h2>月間トレンド記事</h2>
+            </div>
+            <div className={styles.weeklyTrend}>
+              <h2>週間トレンド記事</h2>
+            </div>
+            <div className={styles.dailyTrend}>
+              <h2>日間トレンド記事</h2>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
